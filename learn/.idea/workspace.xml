@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9b31bc8-f86a-4fcc-b0d7-c424c89f7b1e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vehicle.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2mBpCtdiLy7J63sSDrSBZ2u6zPa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Array.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Collection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataStream.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DisplayAny.executor&quot;: &quot;Run&quot;,
+    &quot;Application.List1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.List2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lists.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lists1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lists2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Map1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MergeLists.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ReadWriteFile.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Teacher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Teacher1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TreeStructure.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/NOTES/YEAR 2/Java/Practical/learn&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="TreeStructure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="misc.TreeStructure" />
+      <module name="learn" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TreeStructure" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9b31bc8-f86a-4fcc-b0d7-c424c89f7b1e" name="Changes" comment="" />
+      <created>1726559705999</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726559705999</updated>
+      <workItem from="1726559707447" duration="1729000" />
+      <workItem from="1726564027534" duration="2039000" />
+      <workItem from="1726573598388" duration="72000" />
+      <workItem from="1726729250998" duration="50000" />
+      <workItem from="1726824892236" duration="7000" />
+      <workItem from="1727064510460" duration="1358000" />
+      <workItem from="1727068064237" duration="444000" />
+      <workItem from="1727068601670" duration="370000" />
+      <workItem from="1727069407482" duration="2238000" />
+      <workItem from="1728909049708" duration="2417000" />
+      <workItem from="1728978567650" duration="4917000" />
+      <workItem from="1729504079501" duration="2873000" />
+      <workItem from="1729534452209" duration="48000" />
+      <workItem from="1729582561034" duration="3437000" />
+      <workItem from="1729597168661" duration="33000" />
+      <workItem from="1729671403574" duration="2473000" />
+      <workItem from="1730107021586" duration="1159000" />
+      <workItem from="1730185199086" duration="2995000" />
+      <workItem from="1730782467156" duration="1380000" />
+      <workItem from="1731394250345" duration="7319000" />
+      <workItem from="1731922775145" duration="2024000" />
+      <workItem from="1731990541023" duration="18000" />
+      <workItem from="1731990654514" duration="9383000" />
+      <workItem from="1732605723468" duration="51000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+</project>
