@@ -1,11 +1,19 @@
 import controller.PostController;
 import controller.UserController;
+import service.PostService;
+import service.UserService;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        UserService userService = new UserService();
+        PostService postService = new PostService();
+
+        userService.createTableIfNotExists();
+        postService.createTableIfNotExists();
+
         UserController userController = new UserController();
         PostController postController = new PostController();
 

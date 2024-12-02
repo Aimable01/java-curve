@@ -11,19 +11,18 @@ public class PostService {
 
     public void createTableIfNotExists() {
         String sql = """
-                CREATE TABLE IF NOT EXISTS posts(
+                CREATE TABLE IF NOT EXISTS posts (
                     post_id SERIAL PRIMARY KEY,
-                    user_id INT NOT NULL,
+                    user_id INT REFERENCES users(user_id) ON DELETE CASCADE,
                     content TEXT NOT NULL,
-                    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
                 """;
 
         try (Connection conn = DbConn.getConnection();
              Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(sql);
-            System.out.println("Posts table ensured to exist.");
+            System.out.println("Post table ensured to exist.");
         } catch (SQLException e) {
             e.printStackTrace();
         }

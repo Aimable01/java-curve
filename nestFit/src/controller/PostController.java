@@ -81,4 +81,8 @@ public class PostController {
         postService.deletePost(postId);
         System.out.println("Your post has been deleted.");
     }
+
+    public PostService getPostService() {
+        return postService;
+    }
 }

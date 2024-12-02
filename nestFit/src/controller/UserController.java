@@ -1,6 +1,7 @@
 package controller;
 
 import models.User;
+import service.PostService;
 import service.UserService;
 
 import java.util.Scanner;
@@ -48,5 +49,9 @@ public class UserController {
 
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public UserService getUserService() {
+        return userService;
     }
 }

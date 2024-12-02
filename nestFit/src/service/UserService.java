@@ -13,19 +13,17 @@ public class UserService {
         String sql = """
                 CREATE TABLE IF NOT EXISTS users (
                     user_id SERIAL PRIMARY KEY,
-                    user_name VARCHAR(50) NOT NULL,
+                    username VARCHAR(50) NOT NULL,
                     email VARCHAR(100) NOT NULL UNIQUE,
-                    password VARCHAR(100) NOT NULL,
+                    password VARCHAR(255) NOT NULL,
                     created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
                 """;
 
-        try (
-                Connection conn = DbConn.getConnection();
-                Statement stmt = conn.createStatement();
-        ) {
+        try (Connection conn = DbConn.getConnection();
+             Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(sql);
-            System.out.println("User table ensured to exist");
+            System.out.println("User table ensured to exist.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
