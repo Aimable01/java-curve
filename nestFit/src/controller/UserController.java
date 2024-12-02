@@ -24,7 +24,7 @@ public class UserController {
         String password = scanner.nextLine();
 
         userService.insertUser(userName, email, password);
-        System.out.println("Registration successful!");
+        System.out.println("Registration successful! Welcome to Nest Fit!");
     }
 
     public boolean loginUser(Scanner scanner) {
@@ -37,7 +37,7 @@ public class UserController {
         for (User user : userService.getAllUsers()) {
             if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
                 currentUser = user;
-                System.out.println("Login successful! Welcome, " + user.getUserName());
+                System.out.println("Login successful! Welcome back, " + user.getUserName());
                 return true;
             }
         }
