@@ -21,5 +21,7 @@ public class RegexLearn {
         p = Pattern.compile("(a{1,2}|A{1,2})gent \\d{2}");
         m = p.matcher("Agent 45");
         System.out.println(m.matches());
+
+        System.out.println(Pattern.matches("[amn]?","a"));
     }
 }
