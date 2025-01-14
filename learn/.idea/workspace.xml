@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9b31bc8-f86a-4fcc-b0d7-c424c89f7b1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day4/codes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day5/EnumMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day5/Excersises.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day5/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day6/Boys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day6/Girls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day6/PrinterMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day6/SittingMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day4/RegexLearn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day4/RegexLearn.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +55,10 @@
     "Application.Main.executor": "Run",
     "Application.Map1.executor": "Run",
     "Application.MergeLists.executor": "Run",
+    "Application.PrinterMain.executor": "Run",
     "Application.ReadWriteFile.executor": "Run",
     "Application.RegexLearn.executor": "Run",
+    "Application.SittingMain.executor": "Run",
     "Application.Teacher.executor": "Run",
     "Application.Teacher1.executor": "Run",
     "Application.TreeStructure.executor": "Run",
@@ -136,7 +137,8 @@
       <workItem from="1734288109409" duration="2096000" />
       <workItem from="1734322800808" duration="1942000" />
       <workItem from="1736234671319" duration="1278000" />
-      <workItem from="1736237182525" duration="1901000" />
+      <workItem from="1736237182525" duration="2766000" />
+      <workItem from="1736759079460" duration="4088000" />
     </task>
     <servers />
   </component>
