@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9b31bc8-f86a-4fcc-b0d7-c424c89f7b1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day7/counter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day7/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day7/Acc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day7/Banking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +45,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Array.executor": "Run",
+    "Application.Banking.executor": "Run",
     "Application.Collection.executor": "Run",
     "Application.DataStream.executor": "Run",
     "Application.DisplayAny.executor": "Run",
@@ -128,7 +129,7 @@
       <workItem from="1736234671319" duration="1278000" />
       <workItem from="1736237182525" duration="2766000" />
       <workItem from="1736759079460" duration="4088000" />
-      <workItem from="1736836764178" duration="2500000" />
+      <workItem from="1736836764178" duration="4165000" />
     </task>
     <servers />
   </component>
