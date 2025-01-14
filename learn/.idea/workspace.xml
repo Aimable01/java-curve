@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9b31bc8-f86a-4fcc-b0d7-c424c89f7b1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day6/Boys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day6/Girls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day6/PrinterMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day6/SittingMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day7/counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day7/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +26,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,6 +65,7 @@
     "Application.Teacher1.executor": "Run",
     "Application.TreeStructure.executor": "Run",
     "Application.excersise.executor": "Run",
+    "Application.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -78,20 +81,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="TreeStructure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="misc.TreeStructure" />
-      <module name="learn" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TreeStructure" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -139,6 +128,7 @@
       <workItem from="1736234671319" duration="1278000" />
       <workItem from="1736237182525" duration="2766000" />
       <workItem from="1736759079460" duration="4088000" />
+      <workItem from="1736836764178" duration="2500000" />
     </task>
     <servers />
   </component>
