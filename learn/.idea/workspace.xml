@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9b31bc8-f86a-4fcc-b0d7-c424c89f7b1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day7/Acc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day7/Banking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/misc/Linked.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,10 +25,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -42,46 +41,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Array.executor": "Run",
-    "Application.Banking.executor": "Run",
-    "Application.Collection.executor": "Run",
-    "Application.DataStream.executor": "Run",
-    "Application.DisplayAny.executor": "Run",
-    "Application.Excersises.executor": "Run",
-    "Application.List1.executor": "Run",
-    "Application.List2.executor": "Run",
-    "Application.Lists.executor": "Run",
-    "Application.Lists1.executor": "Run",
-    "Application.Lists2.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.Map1.executor": "Run",
-    "Application.MergeLists.executor": "Run",
-    "Application.PrinterMain.executor": "Run",
-    "Application.ReadWriteFile.executor": "Run",
-    "Application.RegexLearn.executor": "Run",
-    "Application.SittingMain.executor": "Run",
-    "Application.Teacher.executor": "Run",
-    "Application.Teacher1.executor": "Run",
-    "Application.TreeStructure.executor": "Run",
-    "Application.excersise.executor": "Run",
-    "Application.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/NOTES/YEAR 2/Java/Practical/learn",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Array.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Banking.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Collection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataStream.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DisplayAny.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Excersises.executor&quot;: &quot;Run&quot;,
+    &quot;Application.List1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.List2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lists.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lists1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lists2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Map1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MergeLists.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PrinterMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ReadWriteFile.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RegexLearn.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SittingMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Teacher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Teacher1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TreeStructure.executor&quot;: &quot;Run&quot;,
+    &quot;Application.excersise.executor&quot;: &quot;Run&quot;,
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/NOTES/YEAR 2/Java/Practical/learn&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -129,7 +128,8 @@
       <workItem from="1736234671319" duration="1278000" />
       <workItem from="1736237182525" duration="2766000" />
       <workItem from="1736759079460" duration="4088000" />
-      <workItem from="1736836764178" duration="4165000" />
+      <workItem from="1736836764178" duration="4858000" />
+      <workItem from="1736933153961" duration="229000" />
     </task>
     <servers />
   </component>
