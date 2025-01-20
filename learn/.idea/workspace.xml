@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9b31bc8-f86a-4fcc-b0d7-c424c89f7b1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day8/ProducerConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day8/ExecutorFrameWorkDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +49,7 @@
     "Application.DataStream.executor": "Run",
     "Application.DisplayAny.executor": "Run",
     "Application.Excersises.executor": "Run",
+    "Application.ExecutorFrameWorkDemo.executor": "Run",
     "Application.Linked.executor": "Run",
     "Application.List1.executor": "Run",
     "Application.List2.executor": "Run",
@@ -138,7 +139,7 @@
       <workItem from="1737344080933" duration="17000" />
       <workItem from="1737344142198" duration="38000" />
       <workItem from="1737350689731" duration="15000" />
-      <workItem from="1737362179364" duration="2321000" />
+      <workItem from="1737362179364" duration="5369000" />
     </task>
     <servers />
   </component>
