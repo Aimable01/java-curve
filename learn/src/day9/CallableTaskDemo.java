@@ -36,5 +36,15 @@ public class CallableTaskDemo {
         executor.shutdown();
 
         System.out.println("Hello main");
+
+        ExecutorService executor1 = Executors.newFixedThreadPool(1);
+        List<Future<String>> list = executor1.invokeAll(List.of(new CallableTaskA("Hello year 2A"), new CallableTaskA("Hello year 2B"), new CallableTaskA("Hello RCA")));
+        for (Future<String> future : list) {
+            System.out.println(future.get());
+        }
+
+        String task = executor1.invokeAny(List.of(new CallableTaskA("Hello year 2A"), new CallableTaskA("Hello year 2B"), new CallableTaskA("Hello RCA")));
+        System.out.println("The first task to be executed is: " + task);
+        executor1.shutdown();
     }
 }
