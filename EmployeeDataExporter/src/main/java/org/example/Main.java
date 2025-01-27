@@ -7,9 +7,9 @@ import java.util.concurrent.Executors;
 import org.apache.poi.xssf.usermodel.*;
 
 public class Main {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/employeedb";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "";
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/employeedb";
+    private static final String DB_USER = "postgres";
+    private static final String DB_PASSWORD = "postgres"; // Replace with your PostgreSQL password
 
     private final ExecutorService executorService;
 
@@ -67,8 +67,6 @@ public class Main {
         Main exporter = new Main();
 
         exporter.exportEmployeeData("employees1.xlsx");
-        exporter.exportEmployeeData("employees2.xlsx");
-        exporter.exportEmployeeData("employees3.xlsx");
 
         exporter.shutdown();
     }
