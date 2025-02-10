@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9b31bc8-f86a-4fcc-b0d7-c424c89f7b1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Servlets/src/main/java/org/example/Redirect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/misc/StateBehavioralDesignPattern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servlets/out/artifacts/Servlets_Web_exploded/WEB-INF/classes/org/example/AddNumbersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlets/out/artifacts/Servlets_Web_exploded/WEB-INF/classes/org/example/AddNumbersServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servlets/out/artifacts/Servlets_Web_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlets/out/artifacts/Servlets_Web_exploded/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servlets/src/main/java/org/example/AddNumbersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlets/src/main/java/org/example/AddNumbersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Servlets/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlets/web/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JSP/src/main/webapp/Calculation.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JSP/src/main/webapp/add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletFilters/src/main/java/org/example/servletfilters/CalculationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servletFilters/src/main/java/org/example/servletfilters/CalculationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletFilters/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../servletFilters/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,6 +237,9 @@
       <workItem from="1737479689627" duration="12000" />
       <workItem from="1737661984072" duration="562000" />
       <workItem from="1738324956635" duration="134000" />
+      <workItem from="1739159207879" duration="3000" />
+      <workItem from="1739159225113" duration="3077000" />
+      <workItem from="1739176941440" duration="889000" />
     </task>
     <servers />
   </component>
