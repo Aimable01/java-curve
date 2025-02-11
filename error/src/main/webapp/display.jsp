@@ -11,9 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-<%
-    StudentBean st = (StudentBean) session.getAttribute("student");
-    out.print(st);
-%>
+<%--<%--%>
+<%--    StudentBean st = (StudentBean) session.getAttribute("student");--%>
+<%--    out.print(st);--%>
+<%--%>--%>
+First Name from display: ${requestScope.fname}
 </body>
 </html>

@@ -11,5 +11,6 @@
 <a href="hello-servlet">Hello Servlet</a>
 <a href="./calculate.jsp">Calculate</a>
 <a href="./registration.jsp">Register</a>
+<a href="./display.jsp">Display list</a>
 </body>
 </html>
