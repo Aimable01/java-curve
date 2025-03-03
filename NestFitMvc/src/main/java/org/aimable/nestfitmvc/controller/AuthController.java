@@ -80,7 +80,7 @@ public class AuthController extends HttpServlet {
         try {
             userService.login(email, password);
             HttpSession session = request.getSession();
-            session.setAttribute("email", email);
+            session.setAttribute("userEmail", email);
             response.sendRedirect("dashboard.jsp");
         } catch (SQLException e) {
             request.setAttribute("error", "Invalid email or password");
