@@ -67,11 +67,17 @@
 
     request.setAttribute("people", people);
 
+    String name = "Larisse";
+
 %>
 <%--First name: ${param.studentFirstName}--%>
 <%--<jsp:forward page="display.jsp"></jsp:forward>--%>
 
 Aimable: ${people.Aimable}
+
+hello world
+<c:set var="name" value="Larisse"></c:set>
+<c:out value="${name}">No name</c:out>
 
 <table border="1">
     <tr>

@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>error</artifactId>
+    <groupId>org.aimable</groupId>
+    <artifactId>NestFitMvc</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>error</name>
+    <name>NestFitMvc</name>
     <packaging>war</packaging>
 
     <properties>
@@ -36,8 +36,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
     <build>
