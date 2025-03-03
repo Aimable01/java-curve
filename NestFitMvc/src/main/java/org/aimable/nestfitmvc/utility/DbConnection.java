@@ -9,7 +9,27 @@ public class DbConnection {
     private static final String USER = "postgres";
     private static final String PASSWORD = "2006";
 
+    static {
+        try {
+            Class.forName("org.postgresql.Driver");
+            // Test the connection during class initialization
+            try (Connection testConn = getConnection()) {
+                if (testConn == null) {
+                    throw new RuntimeException("Failed to establish initial database connection");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException("Failed to establish initial database connection: " + e.getMessage(), e);
+            }
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("PostgreSQL JDBC Driver not found", e);
+        }
+    }
+
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL,USER,PASSWORD);
+        try {
+            return DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            throw new SQLException("Failed to connect to database: " + e.getMessage(), e);
+        }
     }
 }

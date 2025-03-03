@@ -6,5 +6,5 @@ import java.sql.SQLException;
 
 public interface UserDAO {
     void registerUser(User user) throws SQLException;
-    void login(String email, String password);
+    void login(String email, String password) throws SQLException;
 }
