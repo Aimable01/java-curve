@@ -5,7 +5,6 @@ import org.aimable.nestfitmvc.DAOImpl.PostDAOImpl;
 import org.aimable.nestfitmvc.model.Post;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PostServiceImpl implements PostService {

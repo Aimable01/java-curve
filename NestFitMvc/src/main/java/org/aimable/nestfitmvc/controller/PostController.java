@@ -49,7 +49,7 @@ public class PostController extends HttpServlet {
                     return;
                 }
                 request.setAttribute("post", post);
-                request.getRequestDispatcher("/edit.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/views/posts/edit.jsp").forward(request, response);
             } catch (NumberFormatException e) {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid post ID format");
             }
@@ -100,6 +100,50 @@ public class PostController extends HttpServlet {
                 
                 // Redirect back to dashboard
                 response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
+            } else if (pathInfo.equals("/update")) {
+                // Check user authentication
+                String userEmail = (String) request.getSession().getAttribute("userEmail");
+                Integer userId = (Integer) request.getSession().getAttribute("userId");
+                
+                if (userEmail == null || userId == null) {
+                    response.sendRedirect(request.getContextPath() + "/login.jsp");
+                    return;
+                }
+                
+                // Update existing post
+                String idStr = request.getParameter("id");
+                if (idStr == null || idStr.trim().isEmpty()) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Post ID is required");
+                    return;
+                }
+                
+                try {
+                    Long id = Long.parseLong(idStr);
+                    // First get the existing post to verify ownership
+                    Post existingPost = postService.getPostById(id);
+                    if (existingPost == null) {
+                        response.sendError(HttpServletResponse.SC_NOT_FOUND, "Post not found");
+                        return;
+                    }
+                    
+                    // Verify post ownership
+                    if (!userId.equals(existingPost.getUserId())) {
+                        response.sendError(HttpServletResponse.SC_FORBIDDEN, "You don't have permission to edit this post");
+                        return;
+                    }
+                    
+                    Post post = new Post();
+                    post.setId(id);
+                    post.setTitle(request.getParameter("title"));
+                    post.setContent(request.getParameter("content"));
+                    post.setAuthor(userEmail);
+                    post.setUserId(userId);
+                    
+                    postService.updatePost(id, post);
+                    response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
+                } catch (NumberFormatException e) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid post ID format");
+                }
             } else {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid path");
             }
