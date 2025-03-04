@@ -6,13 +6,15 @@ public class Post {
     private String content;
     private String author;
     private String date;
+    private int userId;
 
-    public Post(int id, String title, String content, String author, String date) {
+    public Post(int id, String title, String content, String author, String date, int userId) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.author = author;
         this.date = date;
+        this.userId = userId;
     }
 
     public int getId() {
@@ -55,6 +57,14 @@ public class Post {
         this.date = date;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
         return "Post{" +
@@ -63,6 +73,7 @@ public class Post {
                 ", content='" + content + '\'' +
                 ", author='" + author + '\'' +
                 ", date='" + date + '\'' +
+                ", userId=" + userId +
                 '}';
     }
 }
