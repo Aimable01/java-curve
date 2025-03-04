@@ -94,7 +94,7 @@ public class PostController extends HttpServlet {
                 
                 postService.createPost(post);
                 
-                // Get updated posts list and set it as request attribute
+                // Get updated posts list and set it as session attribute
                 List<Post> posts = postService.getAllPosts();
                 request.getSession().setAttribute("posts", posts);
                 
@@ -140,6 +140,11 @@ public class PostController extends HttpServlet {
                     post.setUserId(userId);
                     
                     postService.updatePost(id, post);
+                    
+                    // Get updated posts list and set it as session attribute
+                    List<Post> posts = postService.getAllPosts();
+                    request.getSession().setAttribute("posts", posts);
+                    
                     response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
                 } catch (NumberFormatException e) {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid post ID format");
@@ -179,6 +184,11 @@ public class PostController extends HttpServlet {
 
                     // Proceed with deletion
                     postService.deletePost(postId);
+                    
+                    // Get updated posts list and set it as session attribute
+                    List<Post> posts = postService.getAllPosts();
+                    request.getSession().setAttribute("posts", posts);
+                    
                     response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
                 } catch (NumberFormatException e) {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid post ID format");
