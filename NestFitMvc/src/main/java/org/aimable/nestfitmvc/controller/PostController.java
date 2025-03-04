@@ -144,6 +144,45 @@ public class PostController extends HttpServlet {
                 } catch (NumberFormatException e) {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid post ID format");
                 }
+            } else if (pathInfo.equals("/delete")) {
+                // Check user authentication
+                String userEmail = (String) request.getSession().getAttribute("userEmail");
+                Integer userId = (Integer) request.getSession().getAttribute("userId");
+                
+                if (userEmail == null || userId == null) {
+                    response.sendRedirect(request.getContextPath() + "/login.jsp");
+                    return;
+                }
+                
+                // Get post ID from request parameter
+                String idStr = request.getParameter("id");
+                if (idStr == null || idStr.trim().isEmpty()) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Post ID is required");
+                    return;
+                }
+                
+                try {
+                    Long postId = Long.parseLong(idStr);
+                    
+                    // Verify post exists and user owns it
+                    Post post = postService.getPostById(postId);
+                    if (post == null) {
+                        response.sendError(HttpServletResponse.SC_NOT_FOUND, "Post not found");
+                        return;
+                    }
+
+                    // Check post ownership
+                    if (!userId.equals(post.getUserId())) {
+                        response.sendError(HttpServletResponse.SC_FORBIDDEN, "You don't have permission to delete this post");
+                        return;
+                    }
+
+                    // Proceed with deletion
+                    postService.deletePost(postId);
+                    response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
+                } catch (NumberFormatException e) {
+                    response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid post ID format");
+                }
             } else {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid path");
             }
@@ -185,22 +224,50 @@ public class PostController extends HttpServlet {
     protected void doDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-        // Delete post
-        String pathInfo = request.getPathInfo();
-        if (pathInfo == null) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-            return;
-        }
+            // Check user authentication
+            String userEmail = (String) request.getSession().getAttribute("userEmail");
+            Integer userId = (Integer) request.getSession().getAttribute("userId");
+            
+            if (userEmail == null || userId == null) {
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "User must be logged in");
+                return;
+            }
 
-        String[] splits = pathInfo.split("/");
-        if (splits.length != 2) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-            return;
-        }
+            // Get post ID from path
+            String pathInfo = request.getPathInfo();
+            if (pathInfo == null) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Post ID is required");
+                return;
+            }
 
-        Long id = Long.parseLong(splits[1]);
-        postService.deletePost(id);
-        response.setStatus(HttpServletResponse.SC_OK);
+            String[] splits = pathInfo.split("/");
+            if (splits.length != 2) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid path format");
+                return;
+            }
+
+            try {
+                Long postId = Long.parseLong(splits[1]);
+                
+                // Verify post exists and user owns it
+                Post post = postService.getPostById(postId);
+                if (post == null) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, "Post not found");
+                    return;
+                }
+
+                // Check post ownership
+                if (!userId.equals(post.getUserId())) {
+                    response.sendError(HttpServletResponse.SC_FORBIDDEN, "You don't have permission to delete this post");
+                    return;
+                }
+
+                // Proceed with deletion
+                postService.deletePost(postId);
+                response.setStatus(HttpServletResponse.SC_OK);
+            } catch (NumberFormatException e) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid post ID format");
+            }
         } catch (SQLException e) {
             throw new ServletException("Database error occurred", e);
         }
