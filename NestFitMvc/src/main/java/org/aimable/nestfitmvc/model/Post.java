@@ -1,14 +1,18 @@
 package org.aimable.nestfitmvc.model;
 
 public class Post {
-    private int id;
+    private Long id;
     private String title;
     private String content;
     private String author;
     private String date;
     private int userId;
 
-    public Post(int id, String title, String content, String author, String date, int userId) {
+    public Post() {
+        // Default constructor
+    }
+
+    public Post(Long id, String title, String content, String author, String date, int userId) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -17,11 +21,11 @@ public class Post {
         this.userId = userId;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -63,17 +67,5 @@ public class Post {
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", author='" + author + '\'' +
-                ", date='" + date + '\'' +
-                ", userId=" + userId +
-                '}';
     }
 }

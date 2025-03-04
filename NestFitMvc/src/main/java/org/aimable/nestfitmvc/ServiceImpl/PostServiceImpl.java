@@ -21,17 +21,23 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void updatePost(Post post) throws SQLException {
+    public void updatePost(Long id, Post post) throws SQLException {
+        post.setId(id);
         postDAO.updatePost(post);
     }
 
     @Override
-    public void deletePost(int id) throws SQLException {
+    public void deletePost(Long id) throws SQLException {
         postDAO.deletePost(id);
     }
 
     @Override
     public List<Post> getAllPosts() throws SQLException {
         return postDAO.getAllPosts();
+    }
+
+    @Override
+    public Post getPostById(Long id) throws SQLException {
+        return postDAO.getPostById(id);
     }
 }

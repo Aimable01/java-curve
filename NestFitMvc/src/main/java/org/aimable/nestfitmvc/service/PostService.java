@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface PostService {
     void createPost(Post post) throws SQLException;
-    void updatePost(Post post) throws SQLException;
-    void deletePost(int id) throws SQLException;
+    void updatePost(Long id, Post post) throws SQLException;
+    void deletePost(Long id) throws SQLException;
     List<Post> getAllPosts() throws SQLException;
+    Post getPostById(Long id) throws SQLException;
 }

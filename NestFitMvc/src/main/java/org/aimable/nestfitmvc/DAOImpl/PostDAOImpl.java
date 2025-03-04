@@ -76,7 +76,7 @@ public class PostDAOImpl implements PostDAO {
             
             while (rs.next()) {
                 Post post = new Post(
-                    rs.getInt("post_id"),
+                    rs.getLong("post_id"),
                     rs.getString("title"),
                     rs.getString("content"),
                     rs.getString("author"),
@@ -92,14 +92,14 @@ public class PostDAOImpl implements PostDAO {
     }
 
     @Override
-    public Post getPostById(int id) throws SQLException {
+    public Post getPostById(Long id) throws SQLException {
         try (Connection conn = DbConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement("SELECT * FROM posts WHERE post_id = ?")) {
-            ps.setInt(1, id);
+            ps.setLong(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     return new Post(
-                        rs.getInt("post_id"),
+                        rs.getLong("post_id"),
                         rs.getString("title"),
                         rs.getString("content"),
                         rs.getString("author"),
@@ -123,7 +123,7 @@ public class PostDAOImpl implements PostDAO {
             ps.setString(2, post.getContent());
             ps.setString(3, post.getAuthor());
             ps.setInt(4, post.getUserId());
-            ps.setInt(5, post.getId());
+            ps.setLong(5, post.getId());
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected == 0) {
                 throw new SQLException("Post not found with id: " + post.getId());
@@ -134,10 +134,10 @@ public class PostDAOImpl implements PostDAO {
     }
 
     @Override
-    public void deletePost(int id) throws SQLException {
+    public void deletePost(Long id) throws SQLException {
         try (Connection conn = DbConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement("DELETE FROM posts WHERE post_id = ?")) {
-            ps.setInt(1, id);
+            ps.setLong(1, id);
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected == 0) {
                 throw new SQLException("Post not found with id: " + id);
