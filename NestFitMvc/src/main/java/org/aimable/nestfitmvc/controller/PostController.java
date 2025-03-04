@@ -55,13 +55,35 @@ public class PostController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-        // Create new post
-        Post post = new Post();
-        post.setTitle(request.getParameter("title"));
-        post.setContent(request.getParameter("content"));
-        
-        postService.createPost(post);
-        response.sendRedirect(request.getContextPath() + "/posts");
+            String pathInfo = request.getPathInfo();
+            if (pathInfo != null && pathInfo.equals("/create")) {
+                // Get user information from session
+                String userEmail = (String) request.getSession().getAttribute("userEmail");
+                Integer userId = (Integer) request.getSession().getAttribute("userId");
+                
+                if (userEmail == null || userId == null) {
+                    response.sendRedirect(request.getContextPath() + "/login.jsp");
+                    return;
+                }
+                
+                // Create new post
+                Post post = new Post();
+                post.setTitle(request.getParameter("title"));
+                post.setContent(request.getParameter("content"));
+                post.setAuthor(userEmail);
+                post.setUserId(userId);
+                
+                postService.createPost(post);
+                
+                // Get updated posts list and set it as request attribute
+                List<Post> posts = postService.getAllPosts();
+                request.getSession().setAttribute("posts", posts);
+                
+                // Redirect back to dashboard
+                response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
+            } else {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid path");
+            }
         } catch (SQLException e) {
             throw new ServletException("Database error occurred", e);
         }

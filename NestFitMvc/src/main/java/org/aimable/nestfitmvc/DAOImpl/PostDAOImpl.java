@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostDAOImpl implements PostDAO {
-    private void createTableIfNotExists() {
+    private void createTableIfNotExists() throws SQLException {
         String sql = """
                 CREATE TABLE IF NOT EXISTS posts(
                     post_id SERIAL PRIMARY KEY,
@@ -25,9 +25,10 @@ public class PostDAOImpl implements PostDAO {
         try (Connection conn = DbConnection.getConnection();
              Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(sql);
-            System.out.println("Posts table ensured to exist");
+            System.out.println("Posts table created/verified successfully");
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Error creating posts table: " + e.getMessage());
+            throw new SQLException("Failed to create posts table: " + e.getMessage(), e);
         }
     }
 

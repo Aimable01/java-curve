@@ -63,7 +63,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void login(String email, String password) throws SQLException {
+    public User login(String email, String password) throws SQLException {
         try (Connection conn = DbConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement("SELECT * FROM users WHERE email = ? AND password = ?")) {
             ps.setString(1, email);
@@ -72,6 +72,12 @@ public class UserDAOImpl implements UserDAO {
                 if (!rs.next()) {
                     throw new SQLException("Invalid email or password");
                 }
+                User user = new User();
+                user.setId(rs.getInt("user_id"));
+                user.setName(rs.getString("name"));
+                user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
+                return user;
             }
         } catch (SQLException e) {
             throw new SQLException("Error during login: " + e.getMessage(), e);
