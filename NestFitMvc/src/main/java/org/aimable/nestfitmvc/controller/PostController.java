@@ -34,6 +34,25 @@ public class PostController extends HttpServlet {
             List<Post> posts = postService.getAllPosts();
             request.setAttribute("posts", posts);
             request.getRequestDispatcher("/WEB-INF/views/posts/list.jsp").forward(request, response);
+        } else if (pathInfo.equals("/edit")) {
+            // Handle edit request
+            String idStr = request.getParameter("id");
+            if (idStr == null || idStr.trim().isEmpty()) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Post ID is required");
+                return;
+            }
+            try {
+                Long id = Long.parseLong(idStr);
+                Post post = postService.getPostById(id);
+                if (post == null) {
+                    response.sendError(HttpServletResponse.SC_NOT_FOUND, "Post not found");
+                    return;
+                }
+                request.setAttribute("post", post);
+                request.getRequestDispatcher("/edit.jsp").forward(request, response);
+            } catch (NumberFormatException e) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid post ID format");
+            }
         } else {
             // Get single post
             String[] splits = pathInfo.split("/");

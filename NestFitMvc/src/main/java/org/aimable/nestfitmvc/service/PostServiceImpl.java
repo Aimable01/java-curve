@@ -1,5 +1,7 @@
 package org.aimable.nestfitmvc.service;
 
+import org.aimable.nestfitmvc.DAO.PostDAO;
+import org.aimable.nestfitmvc.DAOImpl.PostDAOImpl;
 import org.aimable.nestfitmvc.model.Post;
 
 import java.sql.SQLException;
@@ -7,48 +9,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostServiceImpl implements PostService {
-    private List<Post> posts;
+    private final PostDAO postDAO;
 
     public PostServiceImpl() {
-        this.posts = new ArrayList<>();
-    }
-
-    @Override
-    public void createPost(Post post) throws SQLException {
-        // Implement post creation logic
-        posts.add(post);
-    }
-
-    @Override
-    public void updatePost(Long id, Post post) throws SQLException {
-        // Implement post update logic
-        for (int i = 0; i < posts.size(); i++) {
-            if (posts.get(i).getId().equals(id)) {
-                post.setId(id);
-                posts.set(i, post);
-                break;
-            }
+        try {
+            this.postDAO = new PostDAOImpl();
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to initialize PostDAO", e);
         }
     }
 
     @Override
+    public void createPost(Post post) throws SQLException {
+        postDAO.createPost(post);
+    }
+
+    @Override
+    public void updatePost(Long id, Post post) throws SQLException {
+        post.setId(id);
+        postDAO.updatePost(post);
+    }
+
+    @Override
     public void deletePost(Long id) throws SQLException {
-        // Implement post deletion logic
-        posts.removeIf(post -> post.getId().equals(id));
+        postDAO.deletePost(id);
     }
 
     @Override
     public List<Post> getAllPosts() throws SQLException {
-        // Implement get all posts logic
-        return new ArrayList<>(posts);
+        return postDAO.getAllPosts();
     }
 
     @Override
     public Post getPostById(Long id) throws SQLException {
-        // Implement get post by ID logic
-        return posts.stream()
-                .filter(post -> post.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+        return postDAO.getPostById(id);
     }
 }

@@ -55,7 +55,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${posts}" var="post">
+                                <c:forEach items="${sessionScope.posts}" var="post">
                                     <tr>
                                         <td>${post.title}</td>
                                         <td>${post.content}</td>
