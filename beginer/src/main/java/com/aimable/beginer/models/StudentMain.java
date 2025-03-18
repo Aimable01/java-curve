@@ -8,11 +8,25 @@ public class StudentMain {
     public static void main(String[] args) {
         Session session = HibernateUtility.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
+
+        // Create a new student
         Student student = new Student();
-        student.setFirstName("Sylvie");
-        student.setLastName("Uwera");
+
+        // Set the embedded StudentNames object
+        StudentNames names = new StudentNames();
+        names.setFirstName("John");
+        names.setMiddleName("Mike");
+        names.setLastName("Doe");
+        student.setName(names);
+
+        // Set the age (transient field, will not be persisted)
+        student.setAge(22);
+
+        // Save the student to the database
         session.persist(student);
         transaction.commit();
         session.close();
+
+        System.out.println("Student saved successfully!");
     }
 }

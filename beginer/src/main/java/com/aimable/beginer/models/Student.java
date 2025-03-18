@@ -1,14 +1,25 @@
 package com.aimable.beginer.models;
 
+import jakarta.persistence.*;
+
+@Entity // Marks this class as an entity
+@Table(name = "students") // Specifies the table name
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Use IDENTITY for auto-increment
     private int studId;
-    private String firstName;
-    private String lastName;
 
+    @Embedded // Indicates that this is an embedded object
+    private StudentNames name;
+
+    @Transient // This field will not be persisted in the database
+    private int age;
+
+    // Default constructor
     public Student() {
-
     }
 
+    // Getters and Setters
     public int getStudId() {
         return studId;
     }
@@ -17,28 +28,28 @@ public class Student {
         this.studId = studId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public StudentNames getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(StudentNames name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public int getAge() {
+        return age;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
     public String toString() {
         return "Student{" +
                 "studId=" + studId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", name=" + name +
+                ", age=" + age +
                 '}';
     }
 }

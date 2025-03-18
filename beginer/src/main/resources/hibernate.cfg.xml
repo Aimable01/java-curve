@@ -8,7 +8,7 @@
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/yeartwo?useSSL=false&amp;serverTimezone=UTC</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password"> </property> <!-- Add your password if required -->
+        <property name="hibernate.connection.password"></property> <!-- Add your password if required -->
 
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -19,7 +19,7 @@
         <!-- Automatically update the database schema -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!-- Mapping files -->
-        <mapping resource="Student.hbm.xml"/>
+        <!-- Scan for annotated entities -->
+        <mapping class="com.aimable.beginer.models.Student"/>
     </session-factory>
 </hibernate-configuration>
