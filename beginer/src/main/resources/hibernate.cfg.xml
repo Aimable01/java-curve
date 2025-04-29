@@ -17,7 +17,7 @@
         <property name="hibernate.show_sql">true</property>
 
         <!-- Automatically update the database schema -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- Scan for annotated entities -->
         <mapping class="com.aimable.beginer.models.day0.Student"/>
@@ -25,5 +25,8 @@
         <mapping class="com.aimable.beginer.models.day1.Vehicle" />
         <mapping class="com.aimable.beginer.models.day1.Bike" />
         <mapping class="com.aimable.beginer.models.day1.Car" />
+
+        <mapping class="com.aimable.beginer.models.day2.Students" />
+        <mapping class="com.aimable.beginer.models.day2.Laptop" />
     </session-factory>
 </hibernate-configuration>
