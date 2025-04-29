@@ -21,5 +21,9 @@
 
         <!-- Scan for annotated entities -->
         <mapping class="com.aimable.beginer.models.day0.Student"/>
+
+        <mapping class="com.aimable.beginer.models.day1.Vehicle" />
+        <mapping class="com.aimable.beginer.models.day1.Bike" />
+        <mapping class="com.aimable.beginer.models.day1.Car" />
     </session-factory>
 </hibernate-configuration>

@@ -1,8 +1,9 @@
 package com.aimable.beginer.models.day1;
 
-import javax.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
+@DiscriminatorValue("bike")
 public class Bike extends Vehicle {
     private boolean hasCarrier;
 
