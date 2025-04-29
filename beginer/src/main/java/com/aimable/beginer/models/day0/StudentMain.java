@@ -1,4 +1,4 @@
-package com.aimable.beginer.models;
+package com.aimable.beginer.models.day0;
 
 import com.aimable.beginer.utility.HibernateUtility;
 import org.hibernate.Session;

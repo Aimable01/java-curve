@@ -20,6 +20,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Scan for annotated entities -->
-        <mapping class="com.aimable.beginer.models.Student"/>
+        <mapping class="com.aimable.beginer.models.day0.Student"/>
     </session-factory>
 </hibernate-configuration>

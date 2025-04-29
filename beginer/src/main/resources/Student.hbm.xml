@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "com.aimable.beginer.models.Student" table="students">
+    <class name = "com.aimable.beginer.models.day0.Student" table="students">
 
         <meta attribute = "class-description">
             This class contains the student details.

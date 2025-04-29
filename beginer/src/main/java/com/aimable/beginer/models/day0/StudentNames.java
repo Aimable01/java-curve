@@ -1,4 +1,4 @@
-package com.aimable.beginer.models;
+package com.aimable.beginer.models.day0;
 
 import jakarta.persistence.Embeddable;
 
