@@ -27,4 +27,8 @@ public class SupplierService {
     public Optional<Supplier> findBySupplierName(String username) {
         return supplierRepository.findBySupplierName(username);
     }
+
+    public List<Supplier> findBySupplierAddress(String address) {
+        return supplierRepository.findByAddress(address);
+    }
 }

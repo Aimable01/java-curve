@@ -28,8 +28,13 @@ public class SupplierController {
         return this.supplierService.findById(id);
     }
 
-    @GetMapping("/supplierName/{name}")
+    @GetMapping("/name/{name}")
     public Optional<Supplier> findBySupplierName(@PathVariable String name) {
         return this.supplierService.findBySupplierName(name);
+    }
+
+    @GetMapping("/address/{address}")
+    public List<Supplier> findByAddress(@PathVariable String address) {
+        return this.supplierService.findBySupplierAddress(address);
     }
 }
