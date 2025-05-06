@@ -37,4 +37,20 @@ public class SupplierController {
     public List<Supplier> findByAddress(@PathVariable String address) {
         return this.supplierService.findBySupplierAddress(address);
     }
+
+    @GetMapping("/all")
+    public List<Supplier> all(){
+        return this.supplierService.all();
+    }
+
+    @PutMapping("/{id}")
+    public Supplier update(@PathVariable Long id, @RequestBody Supplier supplier) {
+        return this.supplierService.updateSupplier(id, supplier);
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Long id) {
+        this.supplierService.deleteSupplier(id);
+        return "Deleted Supplier with id: " + id;
+    }
 }
