@@ -23,4 +23,8 @@ public class SupplierService {
     public Supplier createSupplier(Supplier supplier) {
         return supplierRepository.save(supplier);
     }
+
+    public Optional<Supplier> findBySupplierName(String username) {
+        return supplierRepository.findBySupplierName(username);
+    }
 }
