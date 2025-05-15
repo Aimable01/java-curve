@@ -1,5 +1,6 @@
 package com.binary_supermarket.kwizera.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -15,8 +16,10 @@ public class Cart {
     private Long id;
 
     @ManyToOne
+    @JsonIgnore
     private Customer customer;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     private List<CartItem> items;
 

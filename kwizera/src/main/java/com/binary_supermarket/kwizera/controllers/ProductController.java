@@ -1,5 +1,6 @@
 package com.binary_supermarket.kwizera.controllers;
 
+import com.binary_supermarket.kwizera.dto.QuantityRequest;
 import com.binary_supermarket.kwizera.models.Product;
 import com.binary_supermarket.kwizera.models.Quantity;
 import com.binary_supermarket.kwizera.service.ProductService;
@@ -30,10 +31,13 @@ public class ProductController {
     @PostMapping("/{productCode}/quantity")
     public ResponseEntity<?> addQuantity(
             @PathVariable String productCode,
-            @RequestParam int quantity,
-            @RequestParam String operation) {
+            @RequestBody QuantityRequest quantityRequest) {
         try {
-            Quantity addedQuantity = productService.addQuantity(productCode, quantity, operation).getBody();
+            Quantity addedQuantity = productService.addQuantity(
+                    productCode,
+                    quantityRequest.getQuantity(),
+                    quantityRequest.getOperation()
+            ).getBody();
             return ResponseEntity.ok(addedQuantity);
         } catch (ResponseStatusException e) {
             return ResponseEntity.status(e.getStatusCode()).body(e.getReason());

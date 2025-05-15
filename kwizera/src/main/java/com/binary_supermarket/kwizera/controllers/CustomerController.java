@@ -1,5 +1,6 @@
 package com.binary_supermarket.kwizera.controllers;
 
+import com.binary_supermarket.kwizera.dto.LoginDTO;
 import com.binary_supermarket.kwizera.models.Customer;
 import com.binary_supermarket.kwizera.service.CustomerService;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class CustomerController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Customer> login(@RequestParam String email, @RequestParam String password) {
-        return ResponseEntity.ok(customerService.authenticate(email, password));
+    public ResponseEntity<Customer> login(@RequestBody LoginDTO request) {
+        return ResponseEntity.ok(customerService.authenticate(request.email(), request.password()));
     }
 }

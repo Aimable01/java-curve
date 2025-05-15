@@ -44,12 +44,14 @@ public class ProductService {
         }
     }
 
-    public ResponseEntity<List<Product>> getAllProducts() {
+    public List<Product> getAllProducts() {
         try {
-            List<Product> products = productRepository.findAll();
-            return ResponseEntity.ok(products);
+            return productRepository.findAll();
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error retrieving products", e);
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Error retrieving products", e
+            );
         }
     }
 }
