@@ -11,22 +11,27 @@ import java.util.List;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String code;
-    private String product_type;
+
+    private String name;
+    private String productType;
     private Double price;
 
     @CreationTimestamp
     @Column(updatable = false)
-    private LocalDateTime in_date;
+    private LocalDateTime inDate;
 
     private String image;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<Quantity> quantities;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Purchased> purchases;
+    @OneToMany(mappedBy = "product")
+    private List<CartItem> cartItems;
+
+    @OneToMany(mappedBy = "product")
+    private List<Purchase> purchases;
 }

@@ -1,20 +1,33 @@
 package com.binary_supermarket.kwizera.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
 public class Customer {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    private String name;
-    private String email;
+    private Long id;
+
+    private String firstName;
+
+    @Column(unique = true, nullable = false)
+    private String email; // username
+
     private String phone;
     private String password;
+
+    @CreationTimestamp
+    private LocalDateTime date;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Cart> carts;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Purchase> purchases;
 }

@@ -3,22 +3,25 @@ package com.binary_supermarket.kwizera.models;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
-public class Quantity {
+public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "product_code", referencedColumnName = "code")
-    private Product product;
+    private Customer customer;
 
-    private Integer quantity;
-    private String operation; // e.g., "ADD", "REMOVE"
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+    private List<CartItem> items;
+
+    private boolean active = true;
 
     @CreationTimestamp
-    private LocalDateTime date;
+    private LocalDateTime createdDate;
 }

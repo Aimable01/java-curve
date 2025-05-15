@@ -7,17 +7,20 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-public class Quantity {
+public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
+    private Customer customer;
+
+    @ManyToOne
     @JoinColumn(name = "product_code", referencedColumnName = "code")
     private Product product;
 
-    private Integer quantity;
-    private String operation; // e.g., "ADD", "REMOVE"
+    private int quantity;
+    private Double total;
 
     @CreationTimestamp
     private LocalDateTime date;

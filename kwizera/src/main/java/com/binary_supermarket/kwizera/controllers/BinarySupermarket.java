@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/hello")
-public class Binary_supermarket {
+public class BinarySupermarket {
 
     @GetMapping()
     public String hello() {
