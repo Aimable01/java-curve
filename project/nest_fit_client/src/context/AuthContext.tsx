@@ -30,6 +30,7 @@ interface AuthContextType {
   ) => Promise<void>;
   logout: () => void;
   isLoading: boolean;
+  isInitialized: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -37,9 +38,11 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
   const router = useRouter();
 
+  // Initialize auth state from localStorage on mount
   useEffect(() => {
     const initializeAuth = () => {
       try {
@@ -47,13 +50,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const storedUser = localStorage.getItem("user");
 
         if (storedToken && storedUser) {
+          const parsedUser = JSON.parse(storedUser);
           setToken(storedToken);
-          setUser(JSON.parse(storedUser));
+          setUser(parsedUser);
         }
       } catch (error) {
         console.error("Error initializing auth:", error);
+        // Clear corrupted data
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
       } finally {
-        setIsLoading(false);
+        setIsInitialized(true);
       }
     };
 
@@ -61,22 +68,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const login = async (username: string, password: string) => {
+    setIsLoading(true);
     try {
       const response = await axios.post("http://localhost:8080/auth/login", {
         username,
         password,
       });
 
-      const { token, user } = response.data.data;
-      setToken(token);
-      setUser(user);
-      localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
+      const { token: newToken, user: newUser } = response.data.data;
+
+      // Update state first
+      setToken(newToken);
+      setUser(newUser);
+
+      // Then update localStorage
+      localStorage.setItem("token", newToken);
+      localStorage.setItem("user", JSON.stringify(newUser));
+
       toast.success("Login successful!");
       router.push("/dashboard");
     } catch (error) {
+      console.error("Login error:", error);
       toast.error("Login failed. Please check your credentials.");
       throw error;
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -86,6 +102,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     fullName: string,
     email: string
   ) => {
+    setIsLoading(true);
     try {
       const response = await axios.post("http://localhost:8080/auth/register", {
         username,
@@ -94,16 +111,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         email,
       });
 
-      const { token, user } = response.data.data;
-      setToken(token);
-      setUser(user);
-      localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
+      const { token: newToken, user: newUser } = response.data.data;
+
+      // Update state first
+      setToken(newToken);
+      setUser(newUser);
+
+      // Then update localStorage
+      localStorage.setItem("token", newToken);
+      localStorage.setItem("user", JSON.stringify(newUser));
+
       toast.success("Registration successful!");
       router.push("/dashboard");
     } catch (error) {
+      console.error("Registration error:", error);
       toast.error("Registration failed. Please try again.");
       throw error;
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -118,7 +143,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, token, login, register, logout, isLoading }}
+      value={{
+        user,
+        token,
+        login,
+        register,
+        logout,
+        isLoading,
+        isInitialized,
+      }}
     >
       {children}
     </AuthContext.Provider>

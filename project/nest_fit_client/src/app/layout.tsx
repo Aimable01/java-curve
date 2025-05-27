@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
+import { PostProvider } from "@/context/PostContext";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 
@@ -29,8 +30,10 @@ export default function RootLayout({
           }
         >
           <AuthProvider>
-            {children}
-            <Toaster position="top-right" />
+            <PostProvider>
+              {children}
+              <Toaster position="top-right" />
+            </PostProvider>
           </AuthProvider>
         </Suspense>
       </body>
