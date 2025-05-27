@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: restful
+  # PostgreSQL config
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/customer
+    username: postgres
+    password: 2006
+  # JPA & Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  main:
+    allow-circular-references: true
+
+# JWT Configuration
+app:
+  jwt:
+    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    expiration: 86400000
